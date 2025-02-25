@@ -91,21 +91,22 @@ export default function Home() {
           {/* New Content */}
           <h2>Initializing Views and Setting Up Button Listeners</h2>
           <p>
-            Below is an example of how to initialize views and set up button listeners in an Android app:
+            Below is an example of how to initialize views and set up button
+            listeners in an Android app:
           </p>
           <pre className={styles.codeBlock}>
             <code>
               {`
-// Initialize the views
-firstInput = findViewById(R.id.editTextNumberDecimal2); // First number input field
-secondInput = findViewById(R.id.editTextNumberDecimal); // Second number input field
-resultDisplay = findViewById(R.id.textView5);
+                  // Initialize the views
+                  firstInput = findViewById(R.id.editTextNumberDecimal2); // First number input field
+                  secondInput = findViewById(R.id.editTextNumberDecimal); // Second number input field
+                  resultDisplay = findViewById(R.id.textView5);
 
-// Set up button listeners
-findViewById<Button>(R.id.button7).setOnClickListener { onOperatorClick("+") }
-findViewById<Button>(R.id.button8).setOnClickListener { onOperatorClick("-") }
-findViewById<Button>(R.id.button9).setOnClickListener { onOperatorClick("*") }
-findViewById<Button>(R.id.button10).setOnClickListener { onOperatorClick("/") }
+                  // Set up button listeners
+                  findViewById<Button>(R.id.button7).setOnClickListener { onOperatorClick("+") }
+                  findViewById<Button>(R.id.button8).setOnClickListener { onOperatorClick("-") }
+                  findViewById<Button>(R.id.button9).setOnClickListener { onOperatorClick("*") }
+                  findViewById<Button>(R.id.button10).setOnClickListener { onOperatorClick("/") }
               `}
             </code>
           </pre>
