@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
           <main className={styles.main}>
             <div className={styles.sidebar}>
               <nav className={styles.sideNav}>
-                <h3>Getting Started</h3>
+                <h3>Docs</h3>
                 <ul>
                   <li>
                     <a href="/docs" className={styles.active}>
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
                     </a>
                   </li>
                   <li>
-                    <a href="/docs">Setup</a>
+                    <a href="/docs/context">Passing Context</a>
                   </li>
                   <li>
                     <a href="/docs">First App</a>
