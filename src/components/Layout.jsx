@@ -5,6 +5,27 @@ import Link from "next/link";
 import styles from "@/app/page.module.css";
 import { usePathname } from "next/navigation";
 
+// Define sidebar structure as a JSON object
+const sidebarLinks = [
+  {
+    category: "Docs",
+    links: [
+      { name: "Introduction", path: "/docs" },
+      { name: "Passing Context", path: "/docs/context" },
+      { name: "Radio Buttons", path: "/docs/radio" },
+      { name: "Checkbox", path: "/docs/checkbox" },
+    ],
+  },
+  {
+    category: "Core Topics",
+    links: [
+      { name: "Activities", path: "/docs/activities" },
+      { name: "Architecture", path: "/docs/architecture" },
+      { name: "UI & Navigation", path: "/docs/ui-navigation" },
+    ],
+  },
+];
+
 export default function Layout({ children }) {
   const pathname = usePathname(); // Get current path
 
@@ -23,38 +44,17 @@ export default function Layout({ children }) {
             />
           </Link>
           <nav className={styles.mainNav}>
-            <Link
-              href="/docs"
-              className={`${styles.navLink} ${
-                pathname === "/docs" ? styles.active : ""
-              }`}
-            >
-              Guides
-            </Link>
-            <Link
-              href="/docs"
-              className={`${styles.navLink} ${
-                pathname === "/docs" ? styles.active : ""
-              }`}
-            >
-              Reference
-            </Link>
-            <Link
-              href="/docs"
-              className={`${styles.navLink} ${
-                pathname === "/docs" ? styles.active : ""
-              }`}
-            >
-              Samples
-            </Link>
-            <Link
-              href="/docs"
-              className={`${styles.navLink} ${
-                pathname === "/docs" ? styles.active : ""
-              }`}
-            >
-              Downloads
-            </Link>
+            {["Guides", "Reference", "Samples", "Downloads"].map((item) => (
+              <Link
+                key={item}
+                href="/docs"
+                className={`${styles.navLink} ${
+                  pathname === "/docs" ? styles.active : ""
+                }`}
+              >
+                {item}
+              </Link>
+            ))}
           </nav>
         </div>
       </header>
@@ -62,68 +62,23 @@ export default function Layout({ children }) {
       <main className={styles.main}>
         <div className={styles.sidebar}>
           <nav className={styles.sideNav}>
-            <h3>Docs</h3>
-            <ul>
-              <li>
-                <Link
-                  href="/docs"
-                  className={pathname === "/docs" ? styles.active : ""}
-                >
-                  Introduction
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs/context"
-                  className={pathname === "/docs/context" ? styles.active : ""}
-                >
-                  Passing Context
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs/first-app"
-                  className={
-                    pathname === "/docs/first-app" ? styles.active : ""
-                  }
-                >
-                  First App
-                </Link>
-              </li>
-            </ul>
-            <h3>Core Topics</h3>
-            <ul>
-              <li>
-                <Link
-                  href="/docs/activities"
-                  className={
-                    pathname === "/docs/activities" ? styles.active : ""
-                  }
-                >
-                  Activities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs/architecture"
-                  className={
-                    pathname === "/docs/architecture" ? styles.active : ""
-                  }
-                >
-                  Architecture
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs/ui-navigation"
-                  className={
-                    pathname === "/docs/ui-navigation" ? styles.active : ""
-                  }
-                >
-                  UI & Navigation
-                </Link>
-              </li>
-            </ul>
+            {sidebarLinks.map((section) => (
+              <div key={section.category}>
+                <h3>{section.category}</h3>
+                <ul>
+                  {section.links.map((link) => (
+                    <li key={link.path}>
+                      <Link
+                        href={link.path}
+                        className={pathname === link.path ? styles.active : ""}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </nav>
         </div>
         {children}
