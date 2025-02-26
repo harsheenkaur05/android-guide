@@ -14,8 +14,12 @@ const sidebarLinks = [
       { name: "Passing Context", path: "/docs/context" },
       { name: "Radio Buttons", path: "/docs/radio" },
       { name: "Checkbox", path: "/docs/checkbox" },
-      { name: "Spinners", path: "/docs/spinner" },
+      { name: "Spinners | DatePicker", path: "/docs/spinner" },
       { name: "Intents", path: "/docs/intents" },
+      { name: "Options Menu", path: "/docs/options" },
+      { name: "Navigation", path: "/docs/navigate" },
+      { name: "Example App", path: "/docs/example" },
+      { name: "Helpers", path: "/docs/helpers" },
     ],
   },
   {
