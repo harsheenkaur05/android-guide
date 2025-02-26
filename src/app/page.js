@@ -25,6 +25,34 @@ export default function Home() {
             Learn more →
           </a>
         </div>
+        <div className={styles.card}>
+          <h2>Build your first app</h2>
+          <p>Create an Android app from scratch using Android Studio</p>
+          <a href="#" className={styles.cardLink}>
+            Get started →
+          </a>
+        </div>
+        <div className={styles.card}>
+          <h2>Learn the fundamentals</h2>
+          <p>Understand Android app architecture and core concepts</p>
+          <a href="#" className={styles.cardLink}>
+            Learn more →
+          </a>
+        </div>
+        <div className={styles.card}>
+          <h2>Build your first app</h2>
+          <p>Create an Android app from scratch using Android Studio</p>
+          <a href="#" className={styles.cardLink}>
+            Get started →
+          </a>
+        </div>
+        <div className={styles.card}>
+          <h2>Learn the fundamentals</h2>
+          <p>Understand Android app architecture and core concepts</p>
+          <a href="#" className={styles.cardLink}>
+            Learn more →
+          </a>
+        </div>
       </div>
     </div>
   );
