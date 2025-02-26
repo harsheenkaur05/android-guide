@@ -7,14 +7,14 @@ import data from "./snippets.json";
 export default function Home() {
   return (
     <div className={styles.content}>
-      <h1>Radio Buttons</h1>
+      <h1>Intents</h1>
       {/* New Content */}
       <h2>Notes</h2>
       <p>
-        Radio buttons allow users to select one option from a set. Use radio
-        buttons when the user needs to see all available options. If available
-        options can be collapsed, consider using a dropdown menu because it uses
-        less space.
+        Intents are messages that allow components to request functionality from
+        other components. They are used to start activities, services, and
+        broadcast receivers. Intents are also used to pass data between
+        components.
       </p>
 
       {data.snippets.map((snippet) => (

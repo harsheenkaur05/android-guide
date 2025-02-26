@@ -11,7 +11,7 @@
   align-items: center;
   justify-items: center;
   min-height: 100vh;
-  padding: 80px;
+  padding: 3.2rem 2rem;
   gap: 0px;
   font-family: var(--font-geist-sans);
   background-color: #fff;
@@ -50,12 +50,12 @@
 
 .main {
   display: flex;
-  /* flex-direction: column; */
   gap: 32px;
   grid-row-start: 2;
-  /* max-width: 1600px; */
   margin: 1rem auto 0;
   padding: 0rem 1.5rem;
+  min-height: 100vh;
+  align-items: flex-start;
 }
 
 .main ol {
@@ -81,13 +81,17 @@
 }
 
 .sidebar {
-  width: 256px;
-  flex-shrink: 0;
+  width: 256px; 
+  flex-shrink: 0; 
+  height: 100vh; /* Full height */
+  position: sticky; 
+  top: 80px; /* Sticks after the header */
+  overflow-y: auto; /* Enables scrolling */
 }
 
+
 .sideNav {
-  position: sticky;
-  top: 80px;
+  padding-bottom: 20px;
 }
 
 .sideNav h3 {

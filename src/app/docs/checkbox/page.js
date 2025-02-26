@@ -7,14 +7,13 @@ import data from "./snippets.json";
 export default function Home() {
   return (
     <div className={styles.content}>
-      <h1>Radio Buttons</h1>
+      <h1>Checkbox</h1>
       {/* New Content */}
       <h2>Notes</h2>
       <p>
-        Radio buttons allow users to select one option from a set. Use radio
-        buttons when the user needs to see all available options. If available
-        options can be collapsed, consider using a dropdown menu because it uses
-        less space.
+        Checkboxes allow users to select multiple options from a set. Use
+        checkboxes when the user needs to see all available options. If the user
+        needs to select only one option from a set, use radio buttons instead.
       </p>
 
       {data.snippets.map((snippet) => (
