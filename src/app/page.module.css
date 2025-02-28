@@ -50,6 +50,8 @@
 
 .main {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
   gap: 32px;
   grid-row-start: 2;
   margin: 1rem auto 0;
