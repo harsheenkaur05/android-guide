@@ -31,7 +31,7 @@ export default function Home() {
         <li><a href="/docs/index/lab4">Lab 4</a></li>
         <li><a href="/docs/index/lab5">Lab 5</a></li>
         <li><a href="/docs/index/lab6">Lab 6</a></li>
-        <li><a href="/docs/index/notes">notes</a></li>
+        <li><a href="./notes">notes</a></li>
       </ul>
     </div>
   );
