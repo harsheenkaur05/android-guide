@@ -1,12 +1,12 @@
 {
   "snippets": [
     {
-      "codeblockTitle": "Spinner Population with Adapter",
-      "code": "val spinner: Spinner = findViewById(R.id.spinner)\nval cities = arrayOf(\"Mumbai\", \"Delhi\", \"Bangalore\", \"Chennai\")\nval adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, cities)\nspinner.adapter = adapter"
+      "codeblockTitle": "Button usage",
+      "code": "//declared during start\nprivate TextView myTextView;\nprivate Button myButton;\n\n \nnow in function\nmyTextView = findViewById(R.id.myTextView);\nmyButton = findViewById(R.id.button);\n\n        myButton.setOnClickListener(v -> {\n            // add code here \n            myTextView.setText(\"Button Pressed\");         \n        //s=(String)myTextView.getText()\n});\n"
     },
     {
-      "codeblockTitle": "Retrieve Spinner Selection",
-      "code": "val selectedCity = spinner.selectedItem.toString()\nToast.makeText(this, \"Selected city: $selectedCity\", Toast.LENGTH_SHORT).show()"
+      "codeblockTitle": "Delay actions",
+      "code": "//import android.os.Handler;\n//import android.os.Looper; \n\nnew Handler(Looper.getMainLooper()).postDelayed(() -> {\n                myTextView.setText(s);  // put any UI element action here\n            }, 1000);\n            //myTextView.postDelayed(() -> myTextView.setText(s), 1000);"
     },
     {
       "codeblockTitle": "Passing Spinner Data via Intent",

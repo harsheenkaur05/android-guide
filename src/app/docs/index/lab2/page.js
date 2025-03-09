@@ -9,7 +9,7 @@ export default function Home() {
     <div className={styles.content}>
       <h1>Spinner + DatePicker</h1>
       {/* New Content */}
-      <h2>Notes</h2>
+      <h2>Lab 2</h2>
       <p>
         Spinners allow users to select from a set of options. Use spinners when
         the user needs to see all available options. If available options can be

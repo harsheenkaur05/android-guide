@@ -10,12 +10,8 @@ export default function Home() {
       <h1>Spinner + DatePicker</h1>
       {/* New Content */}
       <h2>Notes</h2>
-      <p>
-        Spinners allow users to select from a set of options. Use spinners when
-        the user needs to see all available options. If available options can be
-        collapsed, consider using a dropdown menu because it uses less space.
-      </p>
 
+      Index page having all the links to all the components used in android development
       {data.snippets.map((snippet) => (
         <Code
           key={snippet.codeblockTitle}
@@ -24,9 +20,19 @@ export default function Home() {
           mt={2}
           block
         >
+
           {snippet.code}
         </Code>
       ))}
+      <ul>
+        <li><a href="/docs/index/lab1">Lab 1 INTRODUCTION TO ACTIVITY AND LAYOUTS IN ANDROID</a></li>
+        <li><a href="/docs/index/lab2">Lab 2</a></li>
+        <li><a href="/docs/index/lab3">Lab 3</a></li>
+        <li><a href="/docs/index/lab4">Lab 4</a></li>
+        <li><a href="/docs/index/lab5">Lab 5</a></li>
+        <li><a href="/docs/index/lab6">Lab 6</a></li>
+        <li><a href="/docs/index/notes">notes</a></li>
+      </ul>
     </div>
   );
 }
