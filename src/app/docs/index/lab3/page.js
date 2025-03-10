@@ -12,7 +12,7 @@ export default function Home() {
       <h2>Notes</h2>
       <ul>
       <li><a href="/docs/index/lab3/q1">Q1</a></li>
-      <li><a href="/docs/index/lab3/q2">Q2 News app</a></li>
+      <li><a href="/docs/index/lab3/q2">Q2 NEws app</a></li>
       <li><a href="/docs/index/lab3/q3">Q3 Music app(best)</a></li>
       <li><a href="/docs/index/lab3/q4">Q4 sports app</a></li>
       </ul>

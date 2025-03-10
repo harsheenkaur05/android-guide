@@ -7,13 +7,10 @@ import data from "./snippets.json";
 export default function Home() {
   return (
     <div className={styles.content}>
-      <h1>Intents in Android Dev</h1>
+      <h1>Sports App</h1>
       {/* New Content */}
       <h2>Intent passing</h2>
-      <p>
-        Calculator
-      </p>
-
+      
       {data.snippets.map((snippet) => (
         <Code
           key={snippet.codeblockTitle}

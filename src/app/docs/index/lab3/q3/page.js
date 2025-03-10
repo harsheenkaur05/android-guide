@@ -11,7 +11,7 @@ export default function Home() {
       {/* New Content */}
 
       <p>
-        Examles of state transitions:
+        Music app
       </p>
 
       {data.snippets.map((snippet) => (
