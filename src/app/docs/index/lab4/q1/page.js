@@ -7,15 +7,8 @@ import data from "./snippets.json";
 export default function Home() {
   return (
     <div className={styles.content}>
-      <h1>Spinner + DatePicker</h1>
+      <h1>custom Toast and toggle</h1>
       {/* New Content */}
-      <h2>Notes</h2>
-      <ul>
-      <li><a href="/docs/index/lab4/q1">Q1 Toast and toggle</a></li>
-      <li><a href="/docs/index/lab4/q2">Q2 multiple buttons</a></li>
-      <li><a href="/docs/index/lab4/q3">Q3 wifi modes</a></li>
-      </ul>
-
       {data.snippets.map((snippet) => (
         <Code
           key={snippet.codeblockTitle}
