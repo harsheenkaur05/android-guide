@@ -32,6 +32,7 @@ export default function Home() {
         <li><a href="/docs/index/lab5">Lab 5</a></li>
         <li><a href="/docs/index/lab6">Lab 6</a></li>
         <li><a href="./notes">notes</a></li>
+        <li><a href="https://android.sys256.com/docs/filesystem">Report</a></li>
       </ul>
     </div>
   );

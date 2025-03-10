@@ -2,7 +2,7 @@
   "snippets": [
     {
       "codeblockTitle": "Button usage",
-      "code": "//declared during start\nprivate TextView myTextView;\nprivate Button myButton;\n\n \nnow in function\nmyTextView = findViewById(R.id.myTextView);\nmyButton = findViewById(R.id.button);\n\n        myButton.setOnClickListener(v -> {\n            // add code here \n            myTextView.setText(\"Button Pressed\");         \n        //s=(String)myTextView.getText()\n});\n"
+      "code": "//declared during start\nprivate TextView myTextView;\nprivate Button myButton;\n\n \n//now in function\nmyTextView = findViewById(R.id.myTextView);\nmyButton = findViewById(R.id.button);\n\n        myButton.setOnClickListener(v -> {\n            // add code here \n            myTextView.setText(\"Button Pressed\");         \n        //s=(String)myTextView.getText()\n});\n"
     },
     {
       "codeblockTitle": "Delay actions",
