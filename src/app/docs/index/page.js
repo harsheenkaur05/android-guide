@@ -26,11 +26,11 @@ export default function Home() {
       ))}
       <ul>
         <li><a href="/docs/index/lab1">Lab 1 INTRODUCTION TO ACTIVITY AND LAYOUTS IN ANDROID</a></li>
-        <li><a href="/docs/index/lab2">Lab 2</a></li>
-        <li><a href="/docs/index/lab3">Lab 3</a></li>
-        <li><a href="/docs/index/lab4">Lab 4</a></li>
-        <li><a href="/docs/index/lab5">Lab 5</a></li>
-        <li><a href="/docs/index/lab6">Lab 6</a></li>
+        <li><a href="/docs/index/lab2">Lab 2 calculator</a></li>
+        <li><a href="/docs/index/lab3">Lab 3 sports/newsapp</a></li>
+        <li><a href="/docs/index/lab4">Lab 4 IO</a></li>
+        <li><a href="/docs/index/lab5">Lab 5 Spinners , Date picker</a></li>
+        <li><a href="/docs/index/lab6">Lab 6 Menu</a></li>
         <li><a href="./notes">notes</a></li>
         <li><a href="https://android.sys256.com/docs/filesystem">Report</a></li>
       </ul>

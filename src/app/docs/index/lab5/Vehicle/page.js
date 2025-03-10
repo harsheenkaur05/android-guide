@@ -7,9 +7,9 @@ import data from "./snippets.json";
 export default function Home() {
   return (
     <div className={styles.content}>
-      <h1>Menu</h1>
+      <h1>Spinner + DatePicker</h1>
       {/* New Content */}
-      
+      <h2>Vehicles RC</h2>
       <p>
         Spinners allow users to select from a set of options. Use spinners when
         the user needs to see all available options. If available options can be

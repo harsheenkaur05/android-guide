@@ -10,11 +10,17 @@ export default function Home() {
       <h1>Spinner + DatePicker</h1>
       {/* New Content */}
       <h2>Notes</h2>
+      
       <p>
         Spinners allow users to select from a set of options. Use spinners when
         the user needs to see all available options. If available options can be
         collapsed, consider using a dropdown menu because it uses less space.
       </p>
+      <ul>
+      <li><a href="/docs/index/lab5/movie">Q1 movies</a></li>
+      <li><a href="/docs/index/lab5/Travel">Q2 Travel</a></li>
+      <li><a href="/docs/index/lab5/Vehicle">Q3 Vehicles</a></li>
+      </ul>
 
       {data.snippets.map((snippet) => (
         <Code
