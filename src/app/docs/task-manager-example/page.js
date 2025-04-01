@@ -1,7 +1,7 @@
 "use client";
 import styles from "@/app/page.module.css";
-import { Code } from "@geist-ui/core";
 import data from "./snippets.json";
+import CodeRenderer from "@/components/CodeRenderer";
 
 export default function Home() {
   return (
@@ -14,9 +14,11 @@ export default function Home() {
       </p>
 
       {data.snippets.map((snippet) => (
-        <Code key={snippet.codeblockTitle} name={snippet.codeblockTitle} my={0} mt={2} block>
-          {snippet.code}
-        </Code>
+        <CodeRenderer
+          key={snippet.codeblockTitle}
+          code={snippet.code}
+          title={snippet.codeblockTitle}
+        />
       ))}
     </div>
   );

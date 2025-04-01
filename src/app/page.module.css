@@ -286,3 +286,53 @@ a.secondary {
     filter: invert();
   }
 }
+
+.codeContainer {
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1a1a;
+  width: 100%;
+}
+
+.codeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #2a2a2a;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.codeTitle {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+.codeWrapper {
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+.codeWrapper pre {
+  margin: 0;
+  white-space: pre;
+  font-family: var(--font-geist-mono);
+}
+
+.copyButton {
+  background: #3a3a3a;
+  color: #e0e0e0;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.copyButton:hover {
+  background: #4a4a4a;
+}
