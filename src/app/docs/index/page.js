@@ -33,6 +33,7 @@ export default function Home() {
         <li><a href="/docs/index/lab6">Lab 6 Menu</a></li>
         <li><a href="./notes">notes</a></li>
         <li><a href="https://android.sys256.com/docs/filesystem">Report </a></li>
+        <li><a href="https://developer-android.vercel.app/docs/android">Special Report</a></li>
       </ul>
     </div>
   );
