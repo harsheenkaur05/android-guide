@@ -16,11 +16,11 @@ export default function Home() {
         collapsed, consider using a dropdown menu because it uses less space.
       </p>
       <ul>
-      <li><a href="/docs/index/lab7/q1">Q1 Task Manager</a></li>
-      <li><a href="/docs/index/lab7/q2">Q2 Movie Booking</a></li>
-      <li><a href="/docs/index/lab7/q3">Q3 shared preference</a></li>
-      <li><a href="/docs/index/lab7/q4">Q4 Grocery</a></li>
-      <li><a href="/docs/index/lab7/q5">Q5 Tables</a></li>
+      <li><a href="/docs/index/lab8/q1">Q1 Task Manager</a></li>
+      <li><a href="/docs/index/lab8/q2">Q2 Movie Booking</a></li>
+      <li><a href="/docs/index/lab8/q3">Q3 shared preference</a></li>
+      <li><a href="/docs/index/lab8/q4">Q4 Grocery</a></li>
+      <li><a href="/docs/index/lab8/q5">Q5 Tables</a></li>
       </ul>
 
       {data.snippets.map((snippet) => (
