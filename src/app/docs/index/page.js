@@ -31,6 +31,8 @@ export default function Home() {
         <li><a href="/docs/index/lab4">Lab 4 IO</a></li>
         <li><a href="/docs/index/lab5">Lab 5 Spinners , Date picker</a></li>
         <li><a href="/docs/index/lab6">Lab 6 Menu</a></li>
+        <li><a href="/docs/index/lab7">Lab 7 Context_pop</a></li>
+        <li><a href="/docs/index/lab8">Lab 8 DB</a></li>
         <li><a href="./notes">notes</a></li>
         <li><a href="/docs/index/notes_mine">notes_mine</a></li>
         <li><a href="https://android.sys256.com/docs/filesystem">Report </a></li>

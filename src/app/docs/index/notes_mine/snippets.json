@@ -19,6 +19,9 @@
     {
       "codeblockTitle": "Intents passing",
       "code": "// Create an Intent to navigate to the ResultActivity and pass the result\nIntent intent = new Intent(MainActivity.this, ResultActivity.class);\nintent.putExtra(\"result\", resultText); // Put the result text into the Intent\nstartActivity(intent); // Start the ResultActivity\n\n// DIFF JAVA FILE(Reciever, here ResultActivity.class ka onCreate)\n\n// Retrieve the result text passed from MainActivity through the Intent and set it\nString result = getIntent().getStringExtra(\"result\");\nresultTextView.setText(result);  // Set the result to the TextView\n\n// Create an Intent to navigate back to MainActivity\nIntent backIntent = new Intent(ResultActivity.this, MainActivity.class);\nstartActivity(backIntent);  // Start MainActivity\nfinish();  // Close ResultActivity so it’s removed from the back stack"
+    },{
+      "codeblockTitle": "GO back to last intent ya page by ending",
+      "code": "finish();"
     },
     {
       "codeblockTitle": "Interacting with arrayadapter and listview click listener",
@@ -41,21 +44,18 @@
       "codeblockTitle": "Spinner+DatePicker",
       "code": "\nArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations, android.R.layout.simple_spinner_item);\n        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\n        spinnerSource.setAdapter(adapter);\n        spinnerDestination.setAdapter(adapter);\n\n        // Handle the Submit button click: gather input and start the details activity\n        btnSubmit.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n\n                String source = spinnerSource.getSelectedItem().toString();\n                String destination = spinnerDestination.getSelectedItem().toString();\n                int day = datePickerTravel.getDayOfMonth();\n                int month = datePickerTravel.getMonth();\n                int year = datePickerTravel.getYear();\n\n                String dateOfTravel = day + \"/\" + (month + 1) + \"/\" + year;\n                String ticketType = toggleTicketType.isChecked() ? \"Round Trip\" : \"One Way\";\n\n                // Create an intent to launch BookingDetailsActivity\n                Intent intent = new Intent(MainActivity.this, BookingDetailsActivity.class);\n                intent.putExtra(\"source\", source);\n                intent.putExtra(\"destination\", destination);\n                intent.putExtra(\"dateOfTravel\", dateOfTravel);\n                intent.putExtra(\"ticketType\", ticketType);\n                startActivity(intent);\n            }\n        });\n\n        // Handle the Reset button click: clear input fields and reset DatePicker\n        btnReset.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n\n                // Reset spinners to their first item\n                spinnerSource.setSelection(0);\n                spinnerDestination.setSelection(0);\n\n                // Reset DatePicker to current date\n                Calendar calendar = Calendar.getInstance();\n                datePickerTravel.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));\n\n                // Reset ToggleButton to default state (unchecked = One Way)\n                toggleTicketType.setChecked(false);\n            }\n        });"
     },
+    
     {
-      "codeblockTitle": "Codes",
-      "code": ""
+      "codeblockTitle": "Menu",
+      "code": "Refer to  Lab6 (Frame Layout not needed)"
     },
     {
-      "codeblockTitle": "Codes",
-      "code": ""
+      "codeblockTitle": "PopUP Menu",
+      "code": "\nmenuIcon.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                // Create popup menu\n                PopupMenu popupMenu = new PopupMenu(MainActivity.this, v);\n                popupMenu.getMenuInflater().inflate(R.menu.image_menu, popupMenu.getMenu());\n                //image_menu.xml is in menu folder\n\n                // Set menu item click listener\n                popupMenu.setOnMenuItemClickListener(item -> {\n                    int itemId = item.getItemId();\n\n                    if (itemId == R.id.image_1) {//declared in image_menu.xml\n                        // Display Image-1\n                        displayImageView.setImageResource(R.drawable.image_1);\n                        Toast.makeText(MainActivity.this, \"Image-1 Selected\", Toast.LENGTH_SHORT).show();\n                        return true;\n                    } else if (itemId == R.id.image_2) {\n                        // Display Image-2\n                        displayImageView.setImageResource(R.drawable.image_2);\n                        Toast.makeText(MainActivity.this, \"Image-2 Selected\", Toast.LENGTH_SHORT).show();\n                        return true;\n                    }\n\n                    return false;\n                });\n\n                // Show the popup menu\n                popupMenu.show();\n            }"
     },
     {
-      "codeblockTitle": "Codes",
-      "code": ""
-    },
-    {
-      "codeblockTitle": "Codes",
-      "code": ""
+      "codeblockTitle": "hamburder drawable icon in layout file",
+      "code": "\n<vector xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    android:width=\"24dp\"\n    android:height=\"24dp\"\n    android:viewportWidth=\"24\"\n    android:viewportHeight=\"24\">\n    \n    <path\n        android:fillColor=\"#FFFFFF\"\n        android:pathData=\"M3,6h18v2H3zM3,11h18v2H3zM3,16h18v2H3z\"/>\n</vector>\n"
     },
     {
       "codeblockTitle": "Codes",
