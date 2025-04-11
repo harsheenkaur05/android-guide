@@ -32,8 +32,11 @@ export default function Home() {
         <li><a href="/docs/index/lab5">Lab 5 Spinners , Date picker</a></li>
         <li><a href="/docs/index/lab6">Lab 6 Menu</a></li>
         <li><a href="./notes">notes</a></li>
+        <li><a href="/docs/index/notes_mine">notes_mine</a></li>
         <li><a href="https://android.sys256.com/docs/filesystem">Report </a></li>
         <li><a href="https://developer-android.vercel.app/docs/android">Special Report</a></li>
+        
+        <li><a href="https://jmp.sh/kq0WdO4z">Manual </a></li>
       </ul>
     </div>
   );

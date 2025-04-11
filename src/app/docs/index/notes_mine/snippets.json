@@ -1,0 +1,73 @@
+{
+  "snippets": [
+    {
+      "codeblockTitle": "Overall",
+      "code": "\n//TO be added to each onCreate() to setup display well\nsuper.onCreate(savedInstanceState);\n        EdgeToEdge.enable(this); // Enable edge-to-edge display\n        setContentView(R.layout.activity_main); // Set layout file for this activity\n\n        // Adjust UI elements to fit system bars (status bar, navigation bar, etc.)\n        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {\n            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());\n            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);\n            return insets;\n        });\n\n"
+    },
+    {
+      "codeblockTitle": "Button & TextField",
+      "code": "// Initialize the EditText fields by finding their corresponding views\nnum1 = findViewById(R.id.num1);\nnum1.getText().toString() \n//textField return an editable object therefor we have to convert to string \nint number1 = Integer.parseInt(num1.getText().toString());//to get number from value\n\n\n// Initialize the Buttons and link them to the views\nButton btnAdd = findViewById(R.id.btnAdd);\n// Set onClickListeners for the buttons to update the operator when clicked(Lambda expression)\nbtnAdd.setOnClickListener(v -> {\n    selectedOperator = '+';  // Assigning operator\n    Toast.makeText(this, \"Addition Selected\", Toast.LENGTH_SHORT).show();  // Showing a toast message\n    btnAdd.setBackgroundColor(Color.GREEN);  // Changing button color\n});\n//;is imp to finish the btnAdd.setOn waali line"
+    },
+    {
+      "codeblockTitle": "Toast",
+      "code": "Toast.makeText(this, \"Please enter the first number\", Toast.LENGTH_SHORT).show();"
+    },
+    {
+      "codeblockTitle":"Custom Toast(Lab4 q1)",
+      "code":"\nprivate void showToast(String message, int iconResId) {\n        // Inflate the custom Toast layout\n        LayoutInflater inflater = getLayoutInflater();\n        View layout = inflater.inflate(R.layout.custom_toast, null);\n\n        // Set the image and message dynamically\n        ImageView imageView = layout.findViewById(R.id.toast_image); // ID must match the one in XML\n        imageView.setImageResource(iconResId); // Set the icon resource\n        TextView textView = layout.findViewById(R.id.toast_message); // ID must match the one in XML\n        textView.setText(message); // Set the message text\n\n        // Create and show the Toast\n        Toast toast = new Toast(getApplicationContext());\n        toast.setDuration(Toast.LENGTH_SHORT);\n        toast.setView(layout); // Set the custom layout as the view\n        toast.show();\n    }\n"
+    },
+    {
+      "codeblockTitle": "Intents passing",
+      "code": "// Create an Intent to navigate to the ResultActivity and pass the result\nIntent intent = new Intent(MainActivity.this, ResultActivity.class);\nintent.putExtra(\"result\", resultText); // Put the result text into the Intent\nstartActivity(intent); // Start the ResultActivity\n\n// DIFF JAVA FILE(Reciever, here ResultActivity.class ka onCreate)\n\n// Retrieve the result text passed from MainActivity through the Intent and set it\nString result = getIntent().getStringExtra(\"result\");\nresultTextView.setText(result);  // Set the result to the TextView\n\n// Create an Intent to navigate back to MainActivity\nIntent backIntent = new Intent(ResultActivity.this, MainActivity.class);\nstartActivity(backIntent);  // Start MainActivity\nfinish();  // Close ResultActivity so it’s removed from the back stack"
+    },
+    {
+      "codeblockTitle": "Interacting with arrayadapter and listview click listener",
+      "code": "// Create an ArrayAdapter to bind the sports array to the ListView\n// Uses the simple_list_item_1 layout resource for each item in the list if we want to change it create new xml and replace it in code\n//sports is an array of strings\n \nString[] sports = {\n            \"Cricket\", \"Football\", \"Basketball\", \"Tennis\", \"Hockey\",\n            \"Badminton\", \"Volleyball\", \"Table Tennis\", \"Golf\", \"Baseball\"\n    };\n    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, sports);\n// Set the adapter to the ListView(sportsList is the listView) so that it can display the sports items\nsportsList.setAdapter(adapter);\n\n// Set an item click listener for the ListView to handle clicks on individual items\nsportsList.setOnItemClickListener((parent, view, position, id) -> {\n    // Get the selected sport text from the clicked ListView item\n    String selectedSport = ((TextView) view).getText().toString();//.getText() as view is a TextView\n     // Display a Toast message showing the selected sport\n    Toast.makeText(MainActivity.this, \"Selected Sport: \" + selectedSport, Toast.LENGTH_SHORT).show();\n});\n\n //ALternative \nlistView.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {\n            String selectedSport = sports[position];\n            textView.setText(String.format(\"Selected: %s\", selectedSport));\n        });\n        "
+    },
+    {
+      "codeblockTitle": "Using ArrayAdapter with GridView:",
+      "code": "GridView gridView = findViewById(R.id.gridView);\nString[] items = {\"A\", \"B\", \"C\", \"D\", \"E\"};\nArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);\ngridView.setAdapter(adapter);"
+    },
+    {
+      "codeblockTitle": "Toggle  button setup and custom toast",
+      "code": "\n// ToggleButton setup\n        ToggleButton toggleButton = findViewById(R.id.toggleButton);\n        toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {\n            // Show a custom Toast based on ToggleButton state\n            if (isChecked) {\n                showCustomToast(\"Toggle ON!\", R.drawable.toggle_on);\n            } else {\n                showCustomToast(\"Toggle OFF!\", R.drawable.toggle_off);\n            }\n        });\n"
+    },
+    {
+      "codeblockTitle": "Change/Update ImageView",
+      "code": "\n private void updateMode() {\n  // Check the current state of the ToggleButton\n        if (toggleButton.isChecked()) {\n            // Mobile Data is selected\n            imageViewMode.setImageResource(R.drawable.ic_mobile_data); // Image for Mobile Data\n            Toast.makeText(this, \"Mobile Data Mode\", Toast.LENGTH_SHORT).show();\n        } else {\n            // Wi-Fi is selected\n            imageViewMode.setImageResource(R.drawable.ic_wifi); // Image for Wi-Fi\n            Toast.makeText(this, \"Wi-Fi Mode\", Toast.LENGTH_SHORT).show();\n        }\n    }"
+     
+    },
+    {
+      "codeblockTitle": "Spinner+DatePicker",
+      "code": "\nArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations, android.R.layout.simple_spinner_item);\n        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\n        spinnerSource.setAdapter(adapter);\n        spinnerDestination.setAdapter(adapter);\n\n        // Handle the Submit button click: gather input and start the details activity\n        btnSubmit.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n\n                String source = spinnerSource.getSelectedItem().toString();\n                String destination = spinnerDestination.getSelectedItem().toString();\n                int day = datePickerTravel.getDayOfMonth();\n                int month = datePickerTravel.getMonth();\n                int year = datePickerTravel.getYear();\n\n                String dateOfTravel = day + \"/\" + (month + 1) + \"/\" + year;\n                String ticketType = toggleTicketType.isChecked() ? \"Round Trip\" : \"One Way\";\n\n                // Create an intent to launch BookingDetailsActivity\n                Intent intent = new Intent(MainActivity.this, BookingDetailsActivity.class);\n                intent.putExtra(\"source\", source);\n                intent.putExtra(\"destination\", destination);\n                intent.putExtra(\"dateOfTravel\", dateOfTravel);\n                intent.putExtra(\"ticketType\", ticketType);\n                startActivity(intent);\n            }\n        });\n\n        // Handle the Reset button click: clear input fields and reset DatePicker\n        btnReset.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n\n                // Reset spinners to their first item\n                spinnerSource.setSelection(0);\n                spinnerDestination.setSelection(0);\n\n                // Reset DatePicker to current date\n                Calendar calendar = Calendar.getInstance();\n                datePickerTravel.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));\n\n                // Reset ToggleButton to default state (unchecked = One Way)\n                toggleTicketType.setChecked(false);\n            }\n        });"
+    },
+    {
+      "codeblockTitle": "Codes",
+      "code": ""
+    },
+    {
+      "codeblockTitle": "Codes",
+      "code": ""
+    },
+    {
+      "codeblockTitle": "Codes",
+      "code": ""
+    },
+    {
+      "codeblockTitle": "Codes",
+      "code": ""
+    },
+    {
+      "codeblockTitle": "Codes",
+      "code": ""
+    },
+    {
+      "codeblockTitle": "Codes",
+      "code": ""
+    },
+    {
+      "codeblockTitle": "Codes",
+      "code": ""
+    }
+  ]
+}
